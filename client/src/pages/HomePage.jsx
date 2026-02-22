@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function HomePage() {
   return (
     <div>
@@ -43,7 +45,17 @@ export default function HomePage() {
             Learn about which types work well for what project, ply, and size
           </Link>
         </section>
+
+        <section>
+          <h2>Add to our database</h2>
+          <p>Are we missing any ply, needle sizes, or needle types?</p>
+          <Link to=""></Link>
+        </section>
       </main>
+
+      <footer>
+        <p>Knitting Fundamentals</p>
+      </footer>
     </div>
   );
 }
