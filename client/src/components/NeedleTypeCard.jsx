@@ -1,8 +1,9 @@
 import { Link } from "react-router";
-export default function NeedleSizesCard({ name, description, id }) {
+export default function NeedleTypeCard({ name, description, image, id }) {
+  console.log(image);
   return (
     <>
-      <Link to={`/needlesizes/${id}`} />
+      <Link to={`/needletype/${id}`} />
       <div class="relative grid h-160 w-full max-w-md flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
         <div
           class={`absolute inset-0 m-0 h-full w-full overflow-hidden bg-transparent bg-[url('${image}')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none`}

@@ -5,7 +5,7 @@ export default function HomePage() {
     <div>
       <main>
         <section>
-          <h2 className="text-3xl">
+          <h2 className="text-3xl m-10">
             Which ply of yarn with which needle with which size?
           </h2>
           <p>

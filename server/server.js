@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import pg from "pg";
-import e from "express";
 
 const app = express();
 dotenv.config();
@@ -16,10 +15,6 @@ const db = new pg.Pool({
 
 app.get("/", (req, res) => {
   res.status(200).json({ message: "You've reached the server" });
-});
-
-app.listen(8080, () => {
-  console.log("sever running on http://localhost:8080/");
 });
 
 app.get("/ply", async (req, res) => {
@@ -183,4 +178,8 @@ app.post("/needletype", async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: error.message });
   }
+});
+
+app.listen(8080, () => {
+  console.log("sever running on http://localhost:8080/");
 });
