@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 export default function Header() {
   return (
-    <div className="text-2xl font-mono text-blue-800 bg-cyan-300">
+    <div className="text-2xl font-mono text-blue-800 bg-cyan-200">
       <h2>Knitting Fundamentals</h2>
       <nav className="flex flex-row gap-5">
         <Link to="/">Home</Link>

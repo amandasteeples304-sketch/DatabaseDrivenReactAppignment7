@@ -57,7 +57,7 @@ app.get("/ply/:id", async (req, res) => {
   }
 });
 
-app.post("/ply", async (req, res) => {
+app.post("/ply/:id", async (req, res) => {
   try {
     const { name, description, image } = req.body;
     const result = (
@@ -68,6 +68,15 @@ app.post("/ply", async (req, res) => {
     ).rows;
     res.status(201).json(result);
   } catch (e) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/ply/:id", async (req, res) => {
+  try {
+    await db.query("delete from ply where id = $1", [req.params.id]);
+    res.status(204).send();
+  } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
@@ -126,6 +135,15 @@ app.post("/neeldesizes", async (req, res) => {
   }
 });
 
+app.delete("/needlesizes/:id", async (req, res) => {
+  try {
+    await db.query("delete from needlesizes where id = $1", [req.params.id]);
+    res.status(204).send();
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get("/needletype", async (req, res) => {
   try {
     const needletype = (await db.query("SELECT * from needletype")).rows;
@@ -176,6 +194,15 @@ app.post("/needletype", async (req, res) => {
     ).rows;
     res.status(201).json(result);
   } catch (e) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.delete("/needletype/:id", async (req, res) => {
+  try {
+    await db.query("delete from needletype where id = $1", [req.params.id]);
+    res.status(204).send();
+  } catch (error) {
     res.status(500).json({ error: error.message });
   }
 });
